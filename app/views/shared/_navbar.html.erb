@@ -19,6 +19,13 @@
         <li class="nav-item">
             <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
         </li>
+      <% elsif business_signed_in?%>
+        <li class="nav-item">
+            <%= button_to 'Logout', destroy_business_session_path, method: :delete %>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'My Account', edit_business_registration_path%>
+        </li>
       <% else %>
         <li class="nav-item">
             <%= link_to 'Login', new_user_session_path%>
